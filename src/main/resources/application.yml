@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: rag-backend
+
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      # 你运行的模型名称（必须与你的 Ollama pull 的模型一致）
+      chat:
+        options:
+          model: deepseek-r1:1.5b
+      embedding:
+        options:
+          model: nomic-embed-text
+    vectorstore:
+      chroma:
+        client:
+          host: http://localhost
+          port: 8000
+        collection-name: rag-collection
+        initialize: false
+
+# 允许前端访问（Vue 项目默认 http://localhost:5173）
+cors:
+  allowed-origins: "http://localhost:5173"
+  allowed-methods: "*"
+  allowed-headers: "*"
