@@ -16,7 +16,15 @@ import reactor.core.publisher.Flux;
  */
 public interface ChatService {
 
-
+    /**
+     * 流式调用
+     * @param query
+     * @return
+     */
     Flux<String> streamChatRag(String query);
+    /**
+     * 压缩调用
+     */
+    void CompressionChat();
 
 }

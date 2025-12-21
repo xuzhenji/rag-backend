@@ -50,6 +50,7 @@ public class ChromaRAGServiceImpl implements ChromaRAGService {
 
     @Override
     public Flux<String> streamChatWithRAG(String question) {
+
         List<Document> chunks = chromaService.queryVectorStore(question, 3);
 
         StringBuilder context = new StringBuilder();

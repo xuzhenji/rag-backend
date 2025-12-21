@@ -11,7 +11,9 @@ spring:
       max-request-size: 200MB
   ai:
     ollama:
-      base-url: http://localhost:11434
+#      base-url: http://localhost:11434
+      # 同服务器不同docker，ollama为容器名
+      base-url: http://ollama:11434
       # 你运行的模型名称（必须与你的 Ollama pull 的模型一致）
       chat:
         options:
@@ -22,7 +24,9 @@ spring:
     vectorstore:
       chroma:
         client:
-          host: http://localhost
+#          host: http://localhost
+          # 同服务器不同docker，chroma为容器名
+          host: http://chroma
           port: 8000
         collection-name: rag_collection
         tenant-name: default_tenant

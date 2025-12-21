@@ -40,6 +40,11 @@ public class ChatServiceImpl implements ChatService {
         }
     }
 
+    @Override
+    public void CompressionChat() {
+
+    }
+
     /**
      * 构建最终发送给 LLM 的 prompt（简单模板）
      */
